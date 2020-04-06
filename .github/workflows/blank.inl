@@ -1,12 +1,6 @@
 public TaskSpec(id)
-{
-	id -= TASK_SPEC;
-	if(!is_user_connected(id_iuser2))
-{
-    return
-}
-	new id_iuser2 = id_spectator[id];
-	new CsTeams:team = id_iuser2 == 0 ? old_team[id] : cs_get_user_team(id_iuser2);
+	
+        new CsTeams:team = id_iuser2 == 0 ? old_team[id] : is_user_connected(id_user2) ? cs_get_user_team(id_iuser2) : 0;
 	
 	if((id_iuser2 && team == CS_TEAM_CT) || (!id_iuser2 && team == CS_TEAM_T))
 	{
